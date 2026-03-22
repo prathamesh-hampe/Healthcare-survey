@@ -1,17 +1,21 @@
 const express = require("express");
 const fs = require("fs-extra");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
-const path = require("path");
 
+// serve static files
 app.use(express.static(path.join(__dirname, "public")));
+
+// 🔥 FIXED ROOT ROUTE
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const FILE = "./data/responses.json";
 
+// login
 app.post("/api/login", (req,res)=>{
   const {role,username,password} = req.body;
 
@@ -24,6 +28,7 @@ app.post("/api/login", (req,res)=>{
   res.json({success:false});
 });
 
+// survey
 app.post("/api/survey", async(req,res)=>{
   const data = await fs.readJson(FILE).catch(()=>[]);
   data.push(req.body);
@@ -31,9 +36,11 @@ app.post("/api/survey", async(req,res)=>{
   res.json({success:true, message:"Saved!"});
 });
 
+// responses
 app.get("/api/responses", async(req,res)=>{
   const data = await fs.readJson(FILE).catch(()=>[]);
   res.json({success:true,data});
 });
 
-app.listen(3000,()=>console.log("Server running"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,()=>console.log("Server running"));
