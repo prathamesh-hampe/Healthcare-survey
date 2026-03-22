@@ -1,9 +1,5 @@
 const translations = {
   en: {
-    userLogin: "User Login",
-    adminLogin: "Admin Login",
-    username: "Enter Username",
-    password: "Enter Password",
     surveyTitle: "Healthcare Survey Form",
     name: "Name",
     email: "Email",
@@ -14,7 +10,7 @@ const translations = {
     q1: "1. How often do you visit a doctor?",
     q2: "2. Are you satisfied with your healthcare provider?",
     q3: "3. How long do you usually wait for appointments?",
-    q4: "4. Did you face any problem regarding health insurance during treatment?",
+    q4: "4. Did you get any problem regarding health insurance during treatment?",
     q5: "5. How do you rate hospital hygiene?",
     q6: "6. Are staff polite and professional?",
     q7: "7. How easy is it to get medical help?",
@@ -24,10 +20,6 @@ const translations = {
   },
 
   hi: {
-    userLogin: "यूज़र लॉगिन",
-    adminLogin: "एडमिन लॉगिन",
-    username: "यूज़रनेम दर्ज करें",
-    password: "पासवर्ड दर्ज करें",
     surveyTitle: "स्वास्थ्य सर्वेक्षण फॉर्म",
     name: "नाम",
     email: "ईमेल",
@@ -48,10 +40,6 @@ const translations = {
   },
 
   mr: {
-    userLogin: "वापरकर्ता लॉगिन",
-    adminLogin: "अॅडमिन लॉगिन",
-    username: "वापरकर्तानाव टाका",
-    password: "पासवर्ड टाका",
     surveyTitle: "आरोग्य सर्वेक्षण फॉर्म",
     name: "नाव",
     email: "ईमेल",
@@ -82,11 +70,11 @@ function changeLanguage(lang) {
     }
   });
 
-  // Save selected language
+  // Save language
   localStorage.setItem("lang", lang);
 }
 
-// 🔥 LOAD SAVED LANGUAGE
+// 🔥 AUTO LOAD SAVED LANGUAGE
 window.onload = () => {
   const savedLang = localStorage.getItem("lang") || "en";
   changeLanguage(savedLang);
