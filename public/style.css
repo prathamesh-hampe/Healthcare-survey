@@ -13,12 +13,21 @@ body.bg {
   border-radius: 15px;
   width: 90%;
   max-width: 900px;
-  text-align: center;
 }
 
 .logo {
   width: 120px;
+  display: block;
+  margin: auto;
+}
+
+.back-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 input, select, button {
