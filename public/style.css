@@ -9,14 +9,23 @@ body.bg {
 
 .container {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
-  width: 90%;
-  max-width: 900px;
+  width: 320px;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
 }
 
 input, select, button {
   width: 100%;
   padding: 10px;
-  margin: 8px 0;
+  margin: 6px 0;
+}
+
+table {
+  width: 100%;
 }
