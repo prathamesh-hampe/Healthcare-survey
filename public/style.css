@@ -9,9 +9,10 @@ body.bg {
 
 .container {
   background: white;
-  padding: 25px;
+  padding: 30px;
   border-radius: 15px;
-  width: 320px;
+  width: 90%;
+  max-width: 900px;
   text-align: center;
 }
 
@@ -24,8 +25,4 @@ input, select, button {
   width: 100%;
   padding: 10px;
   margin: 6px 0;
-}
-
-table {
-  width: 100%;
 }
