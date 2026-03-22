@@ -1,9 +1,14 @@
 async function login(role) {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  if (!username || !password) {
-    alert("Enter username & password");
+  if (username.length < 3 || username.length > 15) {
+    alert("Username must be 3-15 characters");
+    return;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters");
     return;
   }
 
@@ -15,14 +20,10 @@ async function login(role) {
 
   const data = await res.json();
 
-  if (data.success) {
-    window.location.href = data.redirect;
-  } else {
-    alert("Invalid login!");
-  }
+  if (data.success) window.location.href = data.redirect;
+  else alert("Invalid login");
 }
 
-// survey
 const form = document.getElementById("surveyForm");
 
 if (form) {
@@ -53,7 +54,6 @@ if (form) {
   });
 }
 
-// load data
 async function loadResults() {
   const tbody = document.querySelector("#resultsTable tbody");
   if (!tbody) return;
@@ -63,14 +63,14 @@ async function loadResults() {
 
   data.data.forEach(d => {
     tbody.innerHTML += `<tr>
-      <td>${d.name}</td>
-      <td>${d.email}</td>
-      <td>${d.age}</td>
-      <td>${d.gender}</td>
-      <td>${d.rating}</td>
-      <td>${d.q1}</td><td>${d.q2}</td><td>${d.q3}</td>
-      <td>${d.q4}</td><td>${d.q5}</td><td>${d.q6}</td>
-      <td>${d.q7}</td><td>${d.q8}</td><td>${d.q9}</td><td>${d.q10}</td>
+      <td>${d.name || "-"}</td>
+      <td>${d.email || "-"}</td>
+      <td>${d.age || "-"}</td>
+      <td>${d.gender || "-"}</td>
+      <td>${d.rating || "-"}</td>
+      <td>${d.q1 || "-"}</td><td>${d.q2 || "-"}</td><td>${d.q3 || "-"}</td>
+      <td>${d.q4 || "-"}</td><td>${d.q5 || "-"}</td><td>${d.q6 || "-"}</td>
+      <td>${d.q7 || "-"}</td><td>${d.q8 || "-"}</td><td>${d.q9 || "-"}</td><td>${d.q10 || "-"}</td>
     </tr>`;
   });
 }
