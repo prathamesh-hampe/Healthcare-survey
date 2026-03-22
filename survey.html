@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healthcare Survey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg">
+  <div class="container">
+
+    <!-- 🌍 Language Selector -->
+    <select onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="mr">मराठी</option>
+    </select>
+
+    <h1 data-lang="surveyTitle">Healthcare Survey Form</h1>
+
+    <form id="surveyForm">
+
+      <label data-lang="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label data-lang="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label data-lang="age">Age:</label>
+      <input type="number" id="age" required>
+
+      <label data-lang="gender">Gender:</label>
+      <select id="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <h3>Healthcare Questions</h3>
+
+      <label data-lang="q1">1. How often do you visit a doctor?</label>
+      <input type="text" id="q1">
+
+      <label data-lang="q2">2. Are you satisfied with your healthcare provider?</label>
+      <input type="text" id="q2">
+
+      <label data-lang="q3">3. How long do you usually wait for appointments?</label>
+      <input type="text" id="q3">
+
+      <label data-lang="q4">4. Did you face any problem regarding health insurance during treatment?</label>
+      <input type="text" id="q4">
+
+      <label data-lang="q5">5. How do you rate hospital hygiene?</label>
+      <input type="text" id="q5">
+
+      <label data-lang="q6">6. Are staff polite and professional?</label>
+      <input type="text" id="q6">
+
+      <label data-lang="q7">7. How easy is it to get medical help?</label>
+      <input type="text" id="q7">
+
+      <label data-lang="q8">8. Are medications affordable?</label>
+      <input type="text" id="q8">
+
+      <label data-lang="q9">9. Would you recommend this facility to others?</label>
+      <input type="text" id="q9">
+
+      <label data-lang="q10">10. Any improvements you’d suggest?</label>
+      <input type="text" id="q10">
+
+      <label>Rating (1-5)</label>
+      <input type="number" id="rating" min="1" max="5">
+
+      <button type="submit" data-lang="submit">Submit Survey</button>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="lang.js"></script>
+</body>
+</html>

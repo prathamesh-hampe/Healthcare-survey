@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg">
+<div class="container">
+
+<select onchange="changeLanguage(this.value)">
+<option value="en">English</option>
+<option value="hi">हिंदी</option>
+<option value="mr">मराठी</option>
+</select>
+
+<h1 data-lang="adminLogin">Admin Login</h1>
+
+<input type="text" id="username" placeholder="Admin Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login('admin')">Login</button>
+<p><a href="index.html">Back</a></p>
+
+</div>
+
+<script src="script.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>
