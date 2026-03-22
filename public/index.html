@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>User Login</title>
@@ -9,23 +9,19 @@
 <body class="bg">
 <div class="container">
 
-<select onchange="changeLanguage(this.value)">
-<option value="en">English</option>
-<option value="hi">हिंदी</option>
-<option value="mr">मराठी</option>
-</select>
+<img src="health.png" class="logo">
 
-<h1 data-lang="userLogin">User Login</h1>
+<h1>User Login</h1>
 
-<input type="text" id="username" placeholder="Enter Username" data-lang="username">
-<input type="password" id="password" placeholder="Enter Password" data-lang="password">
+<input type="text" id="username" placeholder="Enter Username">
+<input type="password" id="password" placeholder="Enter Password">
 
 <button onclick="login('user')">Login</button>
-<p><a href="admin-login.html" data-lang="adminLogin">Login as Admin</a></p>
+
+<p><a href="admin-login.html">Admin Login</a></p>
 
 </div>
 
 <script src="script.js"></script>
-<script src="lang.js"></script>
 </body>
 </html>
