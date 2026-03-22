@@ -1,108 +1,43 @@
-async function login(role) {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+async function login(role){
+  const username=usernameField=document.getElementById("username").value.trim();
+  const password=document.getElementById("password").value.trim();
 
-  if (username.length < 3 || username.length > 15) {
-    alert("Username must be 3-15 characters");
-    return;
-  }
+  if(username.length<3||username.length>15){alert("Username 3-15 chars");return;}
+  if(password.length<8){alert("Password min 8 chars");return;}
 
-  if (password.length < 8) {
-    alert("Password must be at least 8 characters");
-    return;
-  }
+  const res=await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password,role})});
+  const data=await res.json();
 
-  const res = await fetch("/api/login", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ username, password, role })
-  });
-
-  const data = await res.json();
-
-  if (data.success) window.location.href = data.redirect;
+  if(data.success) window.location.href=data.redirect;
   else alert("Invalid login");
 }
 
-// signup
-async function signup() {
-  const username = newUsername.value.trim();
-  const password = newPassword.value.trim();
+// AGE VALIDATION
+const form=document.getElementById("surveyForm");
+if(form){
+form.addEventListener("submit",async(e)=>{
+e.preventDefault();
 
-  if (username.length < 3 || username.length > 15) {
-    alert("Username must be 3-15 characters");
-    return;
-  }
+if(parseInt(age.value)<=0){alert("Age must be > 0");return;}
 
-  if (password.length < 8) {
-    alert("Password must be at least 8 characters");
-    return;
-  }
+const payload={name:name.value,email:email.value,age:age.value,gender:gender.value,rating:rating.value,
+q1:q1.value,q2:q2.value,q3:q3.value,q4:q4.value,q5:q5.value,q6:q6.value,q7:q7.value,q8:q8.value,q9:q9.value,q10:q10.value};
 
-  const res = await fetch("/api/signup", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({ username, password })
-  });
-
-  const data = await res.json();
-
-  if (data.success) {
-    alert("Signup successful");
-    window.location.href = "index.html";
-  } else {
-    alert(data.message);
-  }
+const res=await fetch("/api/survey",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+const data=await res.json();
+alert(data.message);
+if(data.success) form.reset();
+});
 }
 
-// survey
-const form = document.getElementById("surveyForm");
-
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const payload = {
-      name: name.value,
-      email: email.value,
-      age: age.value,
-      gender: gender.value,
-      rating: rating.value,
-      q1:q1.value,q2:q2.value,q3:q3.value,q4:q4.value,q5:q5.value,
-      q6:q6.value,q7:q7.value,q8:q8.value,q9:q9.value,q10:q10.value
-    };
-
-    const res = await fetch("/api/survey", {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(payload)
-    });
-
-    const data = await res.json();
-    alert(data.message);
-    if(data.success) form.reset();
-  });
-}
-
-// load results
+// TABLE
 async function loadResults(){
-  const tbody=document.querySelector("#resultsTable tbody");
-  if(!tbody) return;
-
-  const res=await fetch("/api/responses");
-  const data=await res.json();
-
-  data.data.forEach(d=>{
-    tbody.innerHTML+=`<tr>
-      <td>${d.name||"-"}</td>
-      <td>${d.email||"-"}</td>
-      <td>${d.age||"-"}</td>
-      <td>${d.gender||"-"}</td>
-      <td>${d.rating||"-"}</td>
-      <td>${d.q1||"-"}</td><td>${d.q2||"-"}</td><td>${d.q3||"-"}</td>
-      <td>${d.q4||"-"}</td><td>${d.q5||"-"}</td><td>${d.q6||"-"}</td>
-      <td>${d.q7||"-"}</td><td>${d.q8||"-"}</td><td>${d.q9||"-"}</td><td>${d.q10||"-"}</td>
-    </tr>`;
-  });
+const tbody=document.querySelector("#resultsTable tbody");
+if(!tbody)return;
+const res=await fetch("/api/responses");
+const data=await res.json();
+data.data.forEach(d=>{
+tbody.innerHTML+=`<tr><td>${d.name||"-"}</td><td>${d.email||"-"}</td><td>${d.age||"-"}</td><td>${d.gender||"-"}</td><td>${d.rating||"-"}</td><td>${d.q1||"-"}</td><td>${d.q2||"-"}</td><td>${d.q3||"-"}</td><td>${d.q4||"-"}</td><td>${d.q5||"-"}</td><td>${d.q6||"-"}</td><td>${d.q7||"-"}</td><td>${d.q8||"-"}</td><td>${d.q9||"-"}</td><td>${d.q10||"-"}</td></tr>`;
+});
 }
-loadResults();
+loadResults();s();
