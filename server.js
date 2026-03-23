@@ -44,4 +44,4 @@ res.json({success:true,data});
 });
 
 const PORT=process.env.PORT||3000;
-app.listen(PORT,()=>console.log("Server running"));le.log("Server running"));;
+app.listen(PORT,()=>console.log("Server running"));ORT,()=>console.log("Server running"));le.log("Server running"));;
