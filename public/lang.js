@@ -1,67 +1,94 @@
 const translations = {
   en: {
+    userLogin: "User Login",
+    adminLogin: "Admin Login",
+    username: "Enter Username",
+    password: "Enter Password",
     surveyTitle: "Healthcare Survey Form",
+    name: "Name",
+    email: "Email",
+    age: "Age",
+    gender: "Gender",
     submit: "Submit Survey",
 
-    q1: "How satisfied are you with healthcare services?",
-    q2: "Was the staff friendly and helpful?",
-    q3: "Was the waiting time reasonable?",
-    q4: "Was the doctor attentive to your concerns?",
-    q5: "Were facilities clean and hygienic?",
-    q6: "Was the diagnosis clearly explained?",
-    q7: "Was the treatment effective?",
-    q8: "Was the cost reasonable?",
-    q9: "Would you recommend this service?",
-    q10: "Any additional feedback?"
+    q1: "1. How often do you visit a doctor?",
+    q2: "2. Are you satisfied with your healthcare provider?",
+    q3: "3. How long do you usually wait for appointments?",
+    q4: "4. Did you face any problem regarding health insurance during treatment?",
+    q5: "5. How do you rate hospital hygiene?",
+    q6: "6. Are staff polite and professional?",
+    q7: "7. How easy is it to get medical help?",
+    q8: "8. Are medications affordable?",
+    q9: "9. Would you recommend this facility to others?",
+    q10: "10. Any improvements you’d suggest?"
   },
 
   hi: {
-    surveyTitle: "स्वास्थ्य सर्वेक्षण",
+    userLogin: "यूज़र लॉगिन",
+    adminLogin: "एडमिन लॉगिन",
+    username: "यूज़रनेम दर्ज करें",
+    password: "पासवर्ड दर्ज करें",
+    surveyTitle: "स्वास्थ्य सर्वेक्षण फॉर्म",
+    name: "नाम",
+    email: "ईमेल",
+    age: "आयु",
+    gender: "लिंग",
     submit: "सबमिट करें",
 
-    q1: "क्या आप स्वास्थ्य सेवाओं से संतुष्ट हैं?",
-    q2: "क्या स्टाफ सहयोगी और मददगार था?",
-    q3: "क्या प्रतीक्षा समय उचित था?",
-    q4: "क्या डॉक्टर ने आपकी बात ध्यान से सुनी?",
-    q5: "क्या सुविधाएं साफ और स्वच्छ थीं?",
-    q6: "क्या निदान स्पष्ट रूप से समझाया गया?",
-    q7: "क्या उपचार प्रभावी था?",
-    q8: "क्या खर्च उचित था?",
-    q9: "क्या आप इस सेवा की सिफारिश करेंगे?",
-    q10: "कोई अतिरिक्त सुझाव?"
+    q1: "1. आप डॉक्टर के पास कितनी बार जाते हैं?",
+    q2: "2. क्या आप अपने स्वास्थ्य सेवा प्रदाता से संतुष्ट हैं?",
+    q3: "3. आपको अपॉइंटमेंट के लिए कितना इंतजार करना पड़ता है?",
+    q4: "4. क्या आपको इलाज के दौरान बीमा से जुड़ी समस्या हुई?",
+    q5: "5. आप अस्पताल की स्वच्छता को कैसे रेट करेंगे?",
+    q6: "6. क्या स्टाफ विनम्र और पेशेवर है?",
+    q7: "7. चिकित्सा सहायता प्राप्त करना कितना आसान है?",
+    q8: "8. क्या दवाइयाँ किफायती हैं?",
+    q9: "9. क्या आप इस सुविधा को दूसरों को सुझाएंगे?",
+    q10: "10. आप क्या सुधार सुझाव देना चाहेंगे?"
   },
 
   mr: {
-    surveyTitle: "आरोग्य सर्वेक्षण",
+    userLogin: "वापरकर्ता लॉगिन",
+    adminLogin: "अॅडमिन लॉगिन",
+    username: "वापरकर्तानाव टाका",
+    password: "पासवर्ड टाका",
+    surveyTitle: "आरोग्य सर्वेक्षण फॉर्म",
+    name: "नाव",
+    email: "ईमेल",
+    age: "वय",
+    gender: "लिंग",
     submit: "सबमिट करा",
 
-    q1: "तुम्ही आरोग्य सेवांबद्दल समाधानी आहात का?",
-    q2: "कर्मचारी मदत करणारे होते का?",
-    q3: "प्रतीक्षा वेळ योग्य होता का?",
-    q4: "डॉक्टरांनी तुमचं नीट ऐकलं का?",
-    q5: "सुविधा स्वच्छ होत्या का?",
-    q6: "निदान स्पष्टपणे सांगितले का?",
-    q7: "उपचार प्रभावी होता का?",
-    q8: "खर्च योग्य होता का?",
-    q9: "तुम्ही ही सेवा सुचवाल का?",
-    q10: "काही अतिरिक्त अभिप्राय?"
+    q1: "1. तुम्ही डॉक्टरांकडे किती वेळा जाता?",
+    q2: "2. तुम्ही तुमच्या आरोग्य सेवांबद्दल समाधानी आहात का?",
+    q3: "3. अपॉइंटमेंटसाठी तुम्हाला किती वेळ थांबावे लागते?",
+    q4: "4. उपचारादरम्यान विमा संबंधित काही समस्या आली का?",
+    q5: "5. तुम्ही रुग्णालयाच्या स्वच्छतेचे मूल्यांकन कसे कराल?",
+    q6: "6. कर्मचारी नम्र आणि व्यावसायिक आहेत का?",
+    q7: "7. वैद्यकीय मदत मिळवणे किती सोपे आहे?",
+    q8: "8. औषधे परवडणारी आहेत का?",
+    q9: "9. तुम्ही ही सुविधा इतरांना सुचवाल का?",
+    q10: "10. तुम्ही कोणते सुधार सुचवाल?"
   }
 };
 
-// CHANGE LANGUAGE
+// 🔥 MAIN FUNCTION
 function changeLanguage(lang) {
   document.querySelectorAll("[data-lang]").forEach(el => {
     const key = el.getAttribute("data-lang");
     if (translations[lang][key]) {
-      el.placeholder = translations[lang][key]; // for inputs
-      el.textContent = translations[lang][key]; // for text
+      el.textContent = translations[lang][key];
     }
   });
 
   localStorage.setItem("lang", lang);
 }
 
-// LOAD SAVED LANGUAGE
+// 🔥 AUTO LOAD LANGUAGE
+window.onload = () => {
+  const savedLang = localStorage.getItem("lang") || "en";
+  changeLanguage(savedLang);
+};
 window.addEventListener("load", () => {
   const lang = localStorage.getItem("lang") || "en";
   changeLanguage(lang);
