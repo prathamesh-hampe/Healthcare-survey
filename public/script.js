@@ -1,5 +1,5 @@
 async function login(role){
-  const username=usernameField=document.getElementById("username").value.trim();
+  const username=document.getElementById("username").value.trim();
   const password=document.getElementById("password").value.trim();
 
   if(username.length<3||username.length>15){alert("Username 3-15 chars");return;}
@@ -12,12 +12,24 @@ async function login(role){
   else alert("Invalid login");
 }
 
-// AGE VALIDATION
+async function signup(){
+  const username=document.getElementById("newUsername").value.trim();
+  const password=document.getElementById("newPassword").value.trim();
+
+  if(username.length<3||username.length>15){alert("Username 3-15 chars");return;}
+  if(password.length<8){alert("Password min 8 chars");return;}
+
+  const res=await fetch("/api/signup",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password})});
+  const data=await res.json();
+
+  if(data.success){alert("Signup success");window.location.href="index.html";}
+  else alert(data.message);
+}
+
 const form=document.getElementById("surveyForm");
 if(form){
 form.addEventListener("submit",async(e)=>{
 e.preventDefault();
-
 if(parseInt(age.value)<=0){alert("Age must be > 0");return;}
 
 const payload={name:name.value,email:email.value,age:age.value,gender:gender.value,rating:rating.value,
@@ -30,7 +42,6 @@ if(data.success) form.reset();
 });
 }
 
-// TABLE
 async function loadResults(){
 const tbody=document.querySelector("#resultsTable tbody");
 if(!tbody)return;
@@ -40,4 +51,4 @@ data.data.forEach(d=>{
 tbody.innerHTML+=`<tr><td>${d.name||"-"}</td><td>${d.email||"-"}</td><td>${d.age||"-"}</td><td>${d.gender||"-"}</td><td>${d.rating||"-"}</td><td>${d.q1||"-"}</td><td>${d.q2||"-"}</td><td>${d.q3||"-"}</td><td>${d.q4||"-"}</td><td>${d.q5||"-"}</td><td>${d.q6||"-"}</td><td>${d.q7||"-"}</td><td>${d.q8||"-"}</td><td>${d.q9||"-"}</td><td>${d.q10||"-"}</td></tr>`;
 });
 }
-loadResults();s();
+loadResults();
