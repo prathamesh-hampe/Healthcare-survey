@@ -13,16 +13,10 @@ body.bg {
   border-radius: 15px;
   width: 90%;
   max-width: 900px;
-  text-align: center;
-}
-
-.logo {
-  width: 120px;
-  margin-bottom: 10px;
 }
 
 input, select, button {
   width: 100%;
   padding: 10px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
