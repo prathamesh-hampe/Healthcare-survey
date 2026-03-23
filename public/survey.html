@@ -2,47 +2,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Survey</title>
+<title>Healthcare Survey</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg">
 <div class="container">
 
-<button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
+<h1>Healthcare Survey Form</h1>
 
-<h1 data-lang="surveyTitle">Healthcare Survey Form</h1>
+<form id="surveyForm">
 
-<input type="text" id="name" placeholder="Name">
-<input type="email" id="email" placeholder="Email">
-<input type="number" id="age" placeholder="Age">
+<input type="text" id="name" placeholder="Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="number" id="age" placeholder="Age" required>
 
 <select id="gender">
-  <option value="">Select Gender</option>
-  <option>Male</option>
-  <option>Female</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
 </select>
 
-<input type="number" id="rating" placeholder="Overall Rating (1-5)">
+<input type="text" id="q1" placeholder="Doctor visit frequency">
+<input type="text" id="q2" placeholder="Satisfied with provider">
+<input type="text" id="q3" placeholder="Waiting time">
+<input type="text" id="q4" placeholder="Insurance issues">
+<input type="text" id="q5" placeholder="Hygiene rating">
+<input type="text" id="q6" placeholder="Staff behavior">
+<input type="text" id="q7" placeholder="Medical help ease">
+<input type="text" id="q8" placeholder="Medicine affordability">
+<input type="text" id="q9" placeholder="Recommend others">
+<input type="text" id="q10" placeholder="Suggestions">
 
-<h3>Questions</h3>
+<input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5">
 
-<input type="text" id="q1" placeholder="How satisfied are you with healthcare services?">
-<input type="text" id="q2" placeholder="Was the staff friendly and helpful?">
-<input type="text" id="q3" placeholder="Was the waiting time reasonable?">
-<input type="text" id="q4" placeholder="Was the doctor attentive to your concerns?">
-<input type="text" id="q5" placeholder="Were facilities clean and hygienic?">
-<input type="text" id="q6" placeholder="Was the diagnosis clearly explained?">
-<input type="text" id="q7" placeholder="Was the treatment effective?">
-<input type="text" id="q8" placeholder="Was the cost reasonable?">
-<input type="text" id="q9" placeholder="Would you recommend this service?">
-<input type="text" id="q10" placeholder="Any additional feedback?">
+<button type="submit">Submit</button>
 
-<button onclick="submitSurvey()">Submit Survey</button>
+</form>
 
 </div>
 
 <script src="script.js"></script>
+</body>
+</html>.js"></script>
 <script src="lang.js"></script>
 </body>
 </html>
